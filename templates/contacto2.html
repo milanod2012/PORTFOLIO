@@ -1,0 +1,54 @@
+{% extends "base/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{%block head%}
+<script src="https://www.google.com/recaptcha/api.js"></script>
+{%endblock%}
+{% block title %}Contacto{% endblock %}
+{%block columna8 %}
+
+<div class ="contenedor-neon-int">
+  <div class = "title-neon" >
+    <h3>Enviar mensaje a través del espacio</h3>
+    <p class="mb-4"></p>
+    <p class = "ligh-white">Seguro tenemos mucho de que hablar! Puedes contactarme a través del siguiente formulario:</p>
+    <br>
+
+
+
+  </div>
+<!--Aquí estaba el formulario HTML anteriormente-->
+    <div class="row">
+      <div class="col-sm-10 ml-auto mr-auto">
+        <form action = "/contacto2" method = "post" class = "form-horizontal">
+          {{ form.csrf_token() }}
+        {{ wtf.form_field(form.nombre, class='form-control', 
+           placeholder='Nombre') }}
+        {{ wtf.form_field(form.email, class='form-control', 
+           placeholder='Email') }}
+        {{ wtf.form_field(form.message, class='form-control', 
+           placeholder='Tu mensaje') }}
+           {{ recaptcha }}
+           <div aling = "right">
+            <a href="#"><button type="submit">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              Enviar!
+            </button></a>
+          </div></form>
+
+      </div></div>
+
+      
+
+{%endblock %}
+
+
+
+
+
+
+  {% block columna4 %}
+  {% endblock %}

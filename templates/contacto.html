@@ -1,0 +1,61 @@
+{% extends "base/base.html" %}
+{%block head%}
+<script src="https://www.google.com/recaptcha/api.js"></script>
+{%endblock%}
+{% block title %}Contacto{% endblock %}
+{%block columna8 %}
+<script>
+  alert( '¡Su Correo Ha sido Enviado!' );
+</script>
+
+<div class ="contenedor-neon-int">
+  <div class = "title-neon" >
+    <h3>Enviar mensaje a través del espacio</h3>
+    <p class="mb-4"></p>
+    <p class = "ligh-white">Seguro tenemos mucho de que hablar! Puedes contactarme a través del siguiente formulario:</p>
+    <br>
+
+  </div>
+  <form action = "/contacto" method = "post" class = "form-horizontal">
+  
+  <div class="form-group">
+    
+    <div class="col-sm-10 ml-auto mr-auto">
+      <p>Tu Nombre:</p>
+      <input type="name" name = "Nombre" class="form-control" placeholder="Nombre">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-10 ml-auto mr-auto">
+      <p>Tu Email:</p>
+      <input type="email" name = "Email" class="form-control" placeholder="Email">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-10 ml-auto mr-auto">
+      <p>Tu mensaje:</p>
+      <textarea name = "Mensaje" rows="5" cols="20" class="form-control" placeholder="Mensaje"></textarea>
+    </div>
+  </div>
+  <div class="g-recaptcha" align = "center" data-sitekey="{{sitekey}}"></div>
+    <div class="col-sm-10 ml-auto mr-auto">
+      <br>
+      <div align = "right">
+      <a href="#"><button type="submit">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        ENVIAR MENSAJE!
+      </button></a>
+    </div>
+    </div>
+    <br>
+  </div>
+
+</form>
+    
+
+{%endblock %}
+  {% block columna4 %}
+  {% endblock %}
